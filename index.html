@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>BÀI TẬP JS BUỔI 5 - TRANG LUC</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container p-3 my-3 border">
+        <!-- Nav pills -->
+        <ul class="nav nav-pills">
+            <li class="nav-item">
+                <a class="nav-link active" data-toggle="pill" href="#ex1">Bài tập 1</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="pill" href="#ex2">Bài tập 2</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="pill" href="#ex3">Bài tập 3</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="pill" href="#ex4">Bài tập 4</a>
+            </li>
+        </ul>
+
+        <!-- Tab panes -->
+        <div class="tab-content">
+            <div class="tab-pane container active p-3" id="ex1">
+                <div class="my-3">
+                    <h4>🏫 Quản lý tuyển sinh</h4>
+                </div>
+                <div class="form-group row gy-3 align-items-center px-2">
+                    <div class="col-12 col-lg-4 py-2">
+                        <label>Điểm chuẩn</label>
+                        <input type="number" class="form-control" id="diemChuan" placeholder="Nhập">
+                    </div>
+                    <div class="col-12 col-lg-4 py-2">
+                        <div> <label for="">Khu vực ưu tiên</label></div>
+                        <select class="form-control form-input" id="khuVuc">
+                            <option value="0">Chọn</option>
+                            <option value="2">Khu vực A</option>
+                            <option value="1">Khu vực B</option>
+                            <option value="0.5">Khu vực C</option>
+                        </select>
+                    </div>
+                    <div class="col-12 col-lg-4 py-2">
+                        <div> <label for="">Khu vực ưu tiên</label></div>
+                        <select class="form-control form-input" id="doiTuong">
+                            <option value="0">Chọn</option>
+                            <option value="2.5">Đối tượng 1</option>
+                            <option value="1.5">Đối tượng 2</option>
+                            <option value="1">Đối tượng 3</option>
+                        </select>
+                    </div>
+                    <div class="col-12 col-lg-4 py-2">
+                        <label for="">Điểm môn thứ 1</label>
+                        <input type="text" class="form-control" id="diemMon1" placeholder="Nhập">
+                    </div>
+                    <div class="col-12 col-lg-4 py-2">
+                        <label for="">Điểm môn thứ 2</label>
+                        <input type="text" class="form-control" id="diemMon2" placeholder="Nhập">
+                    </div>
+                    <div class="col-12 col-lg-4 py-2">
+                        <label for="">Điểm môn thứ 3</label>
+                        <input type="text" class="form-control" id="diemMon3" placeholder="Nhập">
+                    </div>
+                </div>
+                <button class="btn btn-success" onclick="tinhDiem ()">Kết quả</button>
+                <div class="alert alert-success my-4">
+                    <strong>Kết quả:</strong>
+                    <span id="ketQua"></span>
+                </div>
+
+
+            </div>
+
+            <div class="tab-pane container fade p-3" id="ex2">
+                <div class="my-3">
+                    <h4>🔋 Tính tiền điện</h4>
+                </div>
+                <div class="form-group">
+                    <div class="col-12 col-lg-4 py-2">
+                        <label for="">Họ và tên khách hàng</label>
+                        <input type="text" class="form-control" id="khachHang" placeholder="Nhập">
+                    </div>
+                    <div class="col-12 col-lg-4 py-2">
+                        <label for="">Số KW điện đã dùng</label>
+                        <input type="number" class="form-control" id="soKw" placeholder="Nhập">
+                    </div>
+                </div>
+                <button class="btn btn-success" id="tinhTienDien" onclick="tinhTien ()">Tính tiền điện</button>
+                <div class="alert alert-success my-4">
+                    <strong>Kết quả:</strong>
+                    <span id="ketQua2"></span>
+                </div>
+            </div>
+
+            <div class="tab-pane container fade p-3" id="ex3">
+                <div class="my-3">
+                    <h4>💰 Tính thuế thu nhập cá nhân</h4>
+                </div>
+                <div class="col-12 col-lg-4 py-2">
+                    <label for="">Họ và tên người nộp thuế</label>
+                    <input type="text" class="form-control" id="nguoiNopThue" placeholder="Nhập">
+                </div>
+                <div class="col-12 col-lg-4 py-2">
+                    <label for="">Tổng thu nhập năm</label>
+                    <input type="number" class="form-control" id="tongThuNhap" placeholder="Nhập">
+                </div>
+                <div class="col-12 col-lg-4 py-2">
+                    <label for="">Số người phụ thuộc</label>
+                    <input type="number" class="form-control" id="soNguoiPhuThuoc" placeholder="Nhập">
+                </div>
+                <button class="btn btn-success my-2" id="tinhThue" onclick="tinhThueTNCN ()">Tính thuế</button>
+                <div class="alert alert-success my-4">
+                    <strong>Kết quả:</strong>
+                    <span id="ketQua3"></span>
+                </div>
+            </div>
+
+
+            <div class="tab-pane container fade" id="ex4">
+                <div class="my-3">
+                    <h4>🕸️ Tính tiền cáp</h4>
+                </div>
+                <div class="form-group row gy-3 align-items-center px-2">
+                    <div class="col-12 col-lg-4 py-2">
+                        <div> <label for="">Đối tượng khách hàng</label></div>
+                        <select class="form-control form-input" id="loaiKH"  onchange="myFunction()">
+                            <option value="0">Chọn</option>
+                            <option value="NhaDan">Khách hàng cá nhân</option>
+                            <option value="DoanhNghiep">Khách hàng doanh nghiệp</option>
+                        </select>
+                    </div>
+
+                    <div class="col-12 col-lg-4 py-2">
+                        <label>Mã khách hàng</label>
+                        <input type="number" class="form-control" id="maKH" placeholder="Nhập">
+                    </div>
+                    
+                    <div class="col-12 col-lg-4 py-2">
+                        <label for="">Số kênh cao cấp</label>
+                        <input type="number" class="form-control" id="soKenhCaoCap" placeholder="Nhập">
+                    </div>
+                    <div class="col-12 col-lg-4 py-2" id="soKetNoi" style="display:none">
+                        <label for="">Số kết nối</label>
+                        <input type="number" class="form-control" id="soKetNoiDiv" placeholder="Nhập">
+                    </div>
+                </div>
+                <button class="btn btn-success" onclick="tinhHoaDon ()">Tính hoá đơn</button>
+                <div class="alert alert-success my-4">
+                    <strong>👉🏽 Kết quả:</strong>
+                    <span id="tongTien"></span>
+                </div>
+            </div>
+
+
+
+        </div>
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script src="./main.js"></script>
+</body>
+
+</html>
